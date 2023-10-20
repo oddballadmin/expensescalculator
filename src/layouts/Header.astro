@@ -1,0 +1,11 @@
+---
+import Button from '../components/Button'
+---
+<header>
+    <div id="total-income">$12,345</div>
+    <div class="btn-group">
+        <Button title='Add Goal' onClick={()=>console.log('Default click')} client:load></Button>
+        <Button client:load title='Add Income' onClick={() =>{}}></Button>
+        <Button client:load title='Add Expense' onClick={() =>{}}></Button>
+    </div>
+</header>
