@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import App from '../App';
+import { IncomeProvider } from '../context/IncomeContext';
+import EnterIncome from '../components/pages/EnterIncome';
+---
+
+<Layout title="Welcome to Expense Calculator">
+	<main>
+		<IncomeProvider>
+            <EnterIncome />
+        </IncomeProvider>	
+    </main>
+</Layout>

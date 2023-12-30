@@ -1,11 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import App from '../App';
 import Header from '../layouts/Header.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to Expense Calculator">
+	<Header />
 	<main>
-		<Header/>
+		<App client:load/>
 	</main>
 </Layout>
-
+<style is:global lang="scss">
+	.input-form{
+		display: flex;
+		flex-flow: column nowrap;
+		width: 50%;
+		gap: 1.5rem;
+		margin: 2rem auto;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	button,label,input{
+		all: unset;
+	}
+	
+	input{
+		display: block;
+		background-color: #fff;
+		padding: .5em;
+		width: 50%;
+	}
+	.btn-group{
+		display: flex;
+		justify-content: center;
+		gap: .5rem;
+		width: 100%;
+	}
+	button{
+		background-color: #fff;
+		padding: .5rem 2rem;
+	}
+	.list{
+		display: flex;
+		flex-flow: column nowrap;
+		padding: 1rem;
+		list-style: none;
+		width: 50%;
+		
+	}
+	.list-item{
+		width: 100%;
+		padding: 0.25em 0.5em;
+		background-color: #fff;
+		&:nth-of-type(odd){
+			background-color: #b6b6b6;
+		}
+	}
+</style>

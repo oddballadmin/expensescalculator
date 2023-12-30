@@ -1,11 +1,49 @@
 ---
-import Button from '../components/Button'
+
 ---
+
 <header>
-    <div id="total-income">$12,345</div>
-    <div class="btn-group">
-        <Button title='Add Goal' onClick={()=>console.log('Default click')} client:load></Button>
-        <Button client:load title='Add Income' onClick={() =>{}}></Button>
-        <Button client:load title='Add Expense' onClick={() =>{}}></Button>
-    </div>
+<div class="brand">
+    <h2>Expense Calculator</h2>
+    <small>React Test Demo (Context)</small>
+</div>
+<nav>
+    <div class="nav-item"><a href="">Enter Income</a></div>
+    <div class="nav-item"><a href="">Enter Expenses</a></div>
+</nav>
 </header>
+
+<style lang="scss">
+    header{
+        display: flex;
+        background-color: #5044ff;
+        padding: 1.5rem;
+        color: beige;
+        margin-bottom: 1.5rem;
+
+    }
+    .brand{
+        flex-flow: column;
+        flex: 1;
+
+    }
+    h2{
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    nav{
+        display: inline-flex;
+        gap: 1rem;
+        align-self: center;
+        a{
+            font-size: 1.15rem;
+            color: #FFf;
+           &:visited{
+            color: #FFf;
+            
+           }
+        }
+
+    }
+    
+</style>
