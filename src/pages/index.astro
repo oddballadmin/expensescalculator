@@ -6,15 +6,24 @@ import Header from '../layouts/Header.astro';
 
 <Layout title="Welcome to Expense Calculator">
 	<Header />
-	<main>
+	<main class="app-container">
 		<App client:load/>
 	</main>
 </Layout>
 <style is:global lang="scss">
-	.input-form{
+
+	html,*{
+		box-sizing: border-box;
+	}
+	main{
+		text-align: center;
+		align-items: center;
+	}
+	
+	.input-form,form{
 		display: flex;
 		flex-flow: column nowrap;
-		width: 50%;
+		width: 20rem;
 		gap: 1.5rem;
 		margin: 2rem auto;
 		justify-content: center;
@@ -26,27 +35,26 @@ import Header from '../layouts/Header.astro';
 	}
 	
 	input{
-		display: block;
 		background-color: #fff;
 		padding: .5em;
-		width: 50%;
+		width: 80%;
 	}
 	.btn-group{
 		display: flex;
-		justify-content: center;
-		gap: .5rem;
+		justify-content: space-around;
 		width: 100%;
 	}
 	button{
 		background-color: #fff;
 		padding: .5rem 2rem;
 	}
+	
+
 	.list{
 		display: flex;
 		flex-flow: column nowrap;
 		padding: 1rem;
 		list-style: none;
-		width: 50%;
 		
 	}
 	.list-item{
@@ -56,5 +64,21 @@ import Header from '../layouts/Header.astro';
 		&:nth-of-type(odd){
 			background-color: #b6b6b6;
 		}
+	}
+	.income-remaining{
+		display: block;
+		bottom: 0;
+	}
+	.red{
+		color: red;
+	}
+	.green{
+		color: green;
+	}
+	label,p{
+		font-size: 1.25rem;
+	}
+	.income-init{
+		padding-bottom: 2rem;
 	}
 </style>

@@ -3,47 +3,74 @@
 ---
 
 <header>
-<div class="brand">
-    <h2>Expense Calculator</h2>
-    <small>React Test Demo (Context)</small>
-</div>
-<nav>
-    <div class="nav-item"><a href="">Enter Income</a></div>
-    <div class="nav-item"><a href="">Enter Expenses</a></div>
-</nav>
+	<div class="brand">
+		<h2>Expense Calculator</h2>
+		<small>Calcultate Your Monthly Expenses</small>
+	</div>
+	<nav>
+		<div class="nav-item"><a href="">Expense App</a></div>
+		<div class="nav-item"><a href="">About</a></div>
+	</nav>
 </header>
 
 <style lang="scss">
-    header{
-        display: flex;
-        background-color: #5044ff;
-        padding: 1.5rem;
-        color: beige;
-        margin-bottom: 1.5rem;
+	@media (min-width: 768px) {
+		header {
+			display: flex;
+			margin-bottom: 1.5rem;
+			padding: 1.5rem;
+			.brand {
+				flex: 1;
+                margin-left: 2rem;
+			}
+			nav {
+				display: flex;
+				align-self: center;
+                gap: 2rem;
+                margin-right: 2rem;
+                margin-top: 0;
+                flex-flow: row nowrap;
+				a {
+					font-size: 1.15rem;
+					color: #fff;
+					&:visited {
+						color: #fff;
+					}
+				}
+			}
+		}
+        h2{
+		font-size: 2.5rem;
 
-    }
+        }
+	}
+	header {
+		background-color: #5044ff;
+		color: beige;
+        padding: 2rem;
+
+	}
     .brand{
-        flex-flow: column;
-        flex: 1;
-
-    }
-    h2{
-        margin: 0;
-        font-size: 2.5rem;
+        width: 100%;
     }
     nav{
-        display: inline-flex;
-        gap: 1rem;
-        align-self: center;
-        a{
-            font-size: 1.15rem;
-            color: #FFf;
-           &:visited{
-            color: #FFf;
-            
-           }
-        }
-
+        margin-top: 2rem;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        gap: 2rem;
     }
+	h2 {
+		margin: 0;
+		font-size: 1.85rem;
+	}
+
+	a {
+        color: #fff;
+        text-decoration: none;
+        &:visited{
+            color: #fff;
+        }
+	}
     
 </style>

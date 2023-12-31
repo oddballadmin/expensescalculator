@@ -1,5 +1,6 @@
 import React, { useContext, type FormEvent, useState } from 'react';
-import IncomeContext from '../../context/IncomeContext';
+import {IncomeContext} from '../../context/IncomeContext';
+import EnterExpenses from './EnterExpenses';
 
 const EnterIncome = () => {
     const context = useContext(IncomeContext);
@@ -10,7 +11,7 @@ const EnterIncome = () => {
 
     const { income, setIncome } = context;
     
-    const [isFormSubmitted, setIsFormSubmitted] = useState<Boolean>(false);
+    const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
 
     const handleIncomeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setIsFormSubmitted(false);
@@ -23,8 +24,8 @@ const EnterIncome = () => {
     }
 
     return (
-        <>
-        <form className="input-form" onSubmit={onSubmit}>
+        <div>
+        <form className="income-in input-form" onSubmit={onSubmit}>
             <label htmlFor="EnterIncome">Enter Your monthly income</label>
             <input 
                 type="number"
@@ -35,12 +36,16 @@ const EnterIncome = () => {
             <div className="btn-group">
 
             <button type="reset">Reset</button>
-            <button>Submit</button>
+            <button type='submit'>Submit</button>
             </div>
-            {isFormSubmitted && <label htmlFor="income">Your income is ${income.value}</label>}
             </form>
-        </>
+            {isFormSubmitted && <p className='income-init'>Your income is ${income.value}</p>}
+            {isFormSubmitted ? <EnterExpenses/> : <p className='income-init'>Enter Income To Proceed</p>}            
+        </div>
+
     );
+  
 };
 
 export default EnterIncome;
+ 
